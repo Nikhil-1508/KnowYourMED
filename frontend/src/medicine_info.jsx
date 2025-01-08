@@ -56,7 +56,7 @@ function MedicineInfo() {
   };
 
   return (
-    <div className="App">
+    <div className>
       <h1>Medicine Information Search</h1>
       <input
         type="text"
