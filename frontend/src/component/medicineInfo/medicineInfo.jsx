@@ -1,24 +1,49 @@
 import axios from "axios";
 import { useState } from "react";
+import "./medicineInfo.css";
 
 function MedicineInfo() {
-  const [medicineName, setMedicineName] = useState("");
-  const [medicineDetails, setMedicineDetails] = useState(null);
+  const [medicineName, setMedicineName] = useState(""); // Controlled input field
+  const [medicineDetails, setMedicineDetails] = useState(null); // Store only the latest searched tablet
   const [error, setError] = useState(null);
+
+  // Helper function to get the position of the nth occurrence of a character
+  const getNthOccurrence = (str, char, n) => {
+    let index = -1;
+    for (let i = 0; i < n; i++) {
+      index = str.indexOf(char, index + 1);
+      if (index === -1) break; // If fewer than n occurrences
+    }
+    return index;
+  };
+
+  // Function to slice text till the 10th full stop
+  const sliceText = (text) => {
+    if (!text) return "No information available.";
+    const index = getNthOccurrence(text, ".", 10);
+    return index !== -1 ? text.slice(0, index + 1) : text; // Include the 10th full stop
+  };
 
   const handleInputChange = (e) => {
     setMedicineName(e.target.value);
   };
 
-  const fetchMedicineDetails = async () => {
+  const handleSearch = () => {
+    if (medicineName.trim() === "") {
+      setError("Please enter a valid medicine name.");
+      return;
+    }
+    fetchMedicineDetails(medicineName);
+  };
+
+  const fetchMedicineDetails = async (query) => {
     try {
       // Fetch medicine details from backend API
-      const response = await axios.get(
-        `http://localhost:3000/medicine/${medicineName}`
-      );
+      const response = await axios.get(`http://localhost:3000/medicine/${query}`);
       console.log(response.data?.medicine);
-      // Set state for successful data response
-      setMedicineDetails(response.data);
+
+      // Set the latest searched medicine details
+      setMedicineDetails({ name: query, details: response.data });
       setError(null); // Clear error on success
     } catch (err) {
       // Handle errors (including 404 and 500)
@@ -27,7 +52,6 @@ function MedicineInfo() {
         err.response?.data?.message ||
           "An error occurred while fetching medicine details."
       );
-      setMedicineDetails(null); // Clear previous data if error occurs
     }
   };
 
@@ -40,26 +64,51 @@ function MedicineInfo() {
         value={medicineName}
         onChange={handleInputChange}
       />
-      <button onClick={fetchMedicineDetails}>Search</button>
+      <div>
+        <button onClick={handleSearch}>Search</button>
+      </div>
 
       {error && <p style={{ color: "red" }}>{error}</p>}
 
+      {/* Display only the latest searched medicine */}
       {medicineDetails && (
-        <div>
+        <div className="medicine-card">
           <h2>
             Details for{" "}
-            {medicineName.charAt(0).toUpperCase() + medicineName.slice(1)}
+            {medicineDetails.name.charAt(0).toUpperCase() + medicineDetails.name.slice(1)}
           </h2>
           <p>
-            <strong>Dosage Form:</strong> {medicineDetails.dosage}
+            <strong>Dosage Form:</strong>{" "}
+            {sliceText(medicineDetails.details.dosage)}
           </p>
           <p>
-            <strong>AgeGroup:</strong> {medicineDetails.ageGroup}
+            <strong>Age Group:</strong>{" "}
+            {sliceText(medicineDetails.details.ageGroup)}
           </p>
           <p>
-            <strong>SideEffects:</strong> {medicineDetails.sideEffects}
+            <strong>Side Effects:</strong>{" "}
+            {sliceText(medicineDetails.details.sideEffects)}
           </p>
-          {/* {medicineDetails.medicine} */}
+          <p>
+            <strong>Purpose:</strong>{" "}
+            {sliceText(medicineDetails.details.medicine?.purpose)}
+          </p>
+          <p>
+            <strong>Warnings:</strong>{" "}
+            {sliceText(medicineDetails.details.warnings)}
+          </p>
+          <p>
+            <strong>Overdosage:</strong>{" "}
+            {sliceText(medicineDetails.details.overdosage)}
+          </p>
+          <p>
+            <strong>Adverse Actions:</strong>{" "}
+            {sliceText(medicineDetails.details.adverseActions)}
+          </p>
+          <p>
+            <strong>General Precautions:</strong>{" "}
+            {sliceText(medicineDetails.details.generalPrecautions)}
+          </p>
         </div>
       )}
     </div>
