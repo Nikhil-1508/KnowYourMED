@@ -9,6 +9,7 @@ import MaintainPills from "./maintain_pills";
 import UserNotifications from "./user-notifications";
 import MedicineInfo from "./medicine_info";
 import GenerateQR from "./generate_qr";
+import QRCodeScanner from "./scan_qr";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/user/notifications" element={<UserNotifications />} />
         <Route path="/user/medicine-info" element={<MedicineInfo />} />
         <Route path="/user/generate-qr" element={<GenerateQR />} />
+        <Route path="/user/scan-qr" element={<QRCodeScanner />} />
       </Routes>
     </BrowserRouter>
   );
