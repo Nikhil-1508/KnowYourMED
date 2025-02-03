@@ -1,0 +1,210 @@
+.scanurl-wrapper {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: "Reem Kufi", sans-serif;
+}
+
+.scanurl-container {
+  min-height: 100vh;
+  width: 100%;
+  padding-top: clamp(80px, 10vh, 120px);
+  background-image: url("/img4.png"); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.scanurl-navbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 2;
+  box-sizing: border-box;
+  padding: clamp(5px, 2vw, 10px);
+  margin: 0;
+}
+
+.language-selector-scanurl {
+  position: absolute;
+  top: clamp(5px, 1.5vh, 10px);
+  right: clamp(5px, 1.5vw, 10px);
+  z-index: 10;
+}
+
+.language-dropdown-container-scanurl {
+  width: clamp(100px, 20vw, 150px);
+  max-width: 100%;
+}
+
+.language-dropdown-scanurl {
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  padding: clamp(0.3rem, 1vw, 0.5rem);
+  width: 100%;
+  background-color: white;
+  border-radius: 4px;
+}
+
+.nav-logo-container-scanurl {
+  position: absolute;
+  top: clamp(5px, 2vh, 10px);
+  left: clamp(5px, 2vw, 10px);
+  border-radius: 50%;
+  z-index: 3;
+}
+
+.nav-logo-container-scanurl img {
+  border-radius: 50%;
+  height: clamp(80px, 12vw, 200px); /* Increased the size */
+  width: clamp(80px, 12vw, 200px); /* Increased the size */
+  transition: all 0.3s ease;
+}
+
+.nav-links-container-scanurl {
+  display: flex;
+  align-items: center;
+  gap: clamp(3px, 1vw, 10px);
+  z-index: 3;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0 clamp(10px, 3vw, 30px);
+  margin-right: clamp(140px, 8vw, 200px);
+}
+
+.nav-linkVal-container-scanurl {
+  text-decoration: none;
+  color: rgb(108, 183, 206);
+  padding: clamp(6px, 1.2vw, 15px);
+  font-size: clamp(12px, 1.8vw, 20px);
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.nav-linkVal-container-scanurl:hover {
+  color: yellow;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.error-text-scanurl {
+  color: red;
+  font-size: clamp(14px, 2vw, 18px);
+  font-weight: bold;
+  text-align: center;
+  margin: clamp(10px, 2vw, 20px);
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.medicine-card-scanurl {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 8px;
+  padding: clamp(20px, 4vw, 40px);
+  width: min(90%, 800px);
+  margin: clamp(20px, 4vh, 40px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  margin-top: 30px;
+}
+
+.medicine-title-scanurl {
+  text-align: center;
+  font-size: clamp(24px, 4vw, 40px);
+  margin-bottom: clamp(20px, 4vh, 40px);
+  font-weight: 900;
+  color: rgb(108, 183, 206);
+}
+
+.medicine-detail-scanurl {
+  display: flex;
+  justify-content: space-between;
+  padding: clamp(8px, 1.5vw, 15px) 0;
+  border-bottom: 1px solid rgba(108, 183, 206, 0.3);
+  gap: 20px;
+  text-align: justify;
+}
+
+.medicine-detail-scanurl:last-child {
+  border-bottom: none;
+  text-align: justify;
+}
+
+.detail-label-scanurl {
+  font-weight: bold;
+  color: #444;
+  font-size: clamp(14px, 1.8vw, 16px);
+  flex: 1;
+}
+
+.detail-value-scanurl {
+  color: #666;
+  font-size: clamp(14px, 1.8vw, 16px);
+  flex: 2;
+  text-align: justify;
+}
+
+.loading-text-scanurl {
+  text-align: center;
+  font-size: clamp(14px, 2vw, 18px);
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 15px 30px;
+  border-radius: 8px;
+  margin: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-links-container-scanurl {
+    margin-right: clamp(40px, 5vw, 60px);
+    justify-content: flex-end;
+  }
+
+  .medicine-card-scanurl {
+    width: 95%;
+    margin: 15px;
+    padding: 15px;
+  }
+
+  .medicine-detail-scanurl {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .detail-value-scanurl {
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .nav-logo-container-scanurl img {
+    height: clamp(30px, 5vw, 40px);
+    width: clamp(30px, 5vw, 40px);
+  }
+
+  .nav-linkVal-container-scanurl {
+    padding: clamp(4px, 1vw, 8px);
+    font-size: clamp(10px, 1.5vw, 14px);
+  }
+
+  .language-dropdown-container-scanurl {
+    width: clamp(80px, 15vw, 100px);
+  }
+
+  .medicine-title-scanurl {
+    font-size: clamp(20px, 3vw, 28px);
+  }
+}

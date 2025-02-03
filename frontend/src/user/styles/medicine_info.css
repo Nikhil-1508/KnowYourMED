@@ -1,0 +1,177 @@
+.medicine-info-container {
+  background-image: url("/img2.png");
+  background-size: cover;
+  background-position: center;
+  font-family: Arial, sans-serif;
+  background-color: #f4f9fc;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+  padding-top: 80px;
+}
+
+.user-medicineinfo-navbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0; /* Explicitly set left to 0 */
+  right: 0; /* Explicitly set right to 0 */
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 2;
+  box-sizing: border-box;
+  padding: clamp(5px, 2vw, 10px);
+  margin: 0; /* Remove any default margins */
+}
+
+.nav-logo-container7 {
+  position: absolute;
+  top: clamp(5px, 2vh, 10px);
+  left: clamp(5px, 2vw, 10px);
+  border-radius: 50%;
+  z-index: 3;
+}
+
+.nav-logo-container7 img {
+  border-radius: 50%;
+  height: clamp(60px, 8vw, 140px);
+  width: clamp(60px, 8vw, 140px);
+  transition: all 0.3s ease;
+}
+
+.nav-links-container-medicineinfo {
+  display: flex;
+  align-items: center;
+  gap: clamp(3px, 1vw, 10px);
+  z-index: 3;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0 clamp(10px, 3vw, 30px);
+}
+
+.nav-linkVal-container-medicineinfo {
+  text-decoration: none;
+  color: rgb(108, 183, 206);
+  padding: clamp(6px, 1.2vw, 15px);
+  font-size: clamp(14px, 2vw, 25px);
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.nav-linkVal-container-medicineinfo:hover {
+  color: yellow;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.title-med-info {
+  margin-top: 40px;
+  font-size: 40px;
+  font-weight: 900;
+  color: black;
+}
+
+/* Input Field */
+.input-card-medinfo input[type="text"] {
+  width: 900px;
+  padding: 10px;
+  font-size: 1rem;
+  border: 2px solid #004e89;
+  border-radius: 5px;
+  outline: none;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.input-card-medinfo input[type="text"]:focus {
+  border-color: #0077b6;
+  box-shadow: 0 0 5px #0077b6;
+  text-align: center;
+}
+
+/* Search Button */
+.input-card-medinfo button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #0077b6;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.input-card-info button:hover {
+  background-color: #005f8b;
+}
+
+/* Suggestions Dropdown */
+.suggestions-dropdown-medinfo {
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 5px;
+  position: absolute;
+  width: 100%;
+  background-color: white;
+  z-index: 10;
+}
+
+.suggestions-dropdown li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.suggestions-dropdown li:hover {
+  background-color: #f0f0f0;
+}
+
+/* Medicine Card (Display each paragraph as a card) */
+.medicine-card-medinfo {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.281);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.medicine-card-medinfo h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #004e89;
+  margin-bottom: 20px;
+}
+
+/* Paragraph Styling: Each paragraph displayed as a card */
+.medicine-card-medinfo p {
+  background-color: #f5f5f5;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #333;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Bold Styling for Important Text */
+.medicine-card-medinfo p strong {
+  font-weight: bold;
+  color: #0077b6;
+}
+
+/* Space Between Paragraphs */
+.medicine-card-medinfo p + p {
+  margin-top: 20px;
+}

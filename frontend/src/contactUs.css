@@ -1,0 +1,255 @@
+.contact-us-container {
+  background-image: url("/img5.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  padding: clamp(20px, 4vw, 40px);
+}
+
+.contactus-navbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 2;
+  box-sizing: border-box;
+  padding: clamp(5px, 2vw, 10px);
+  margin: 0;
+}
+
+.nav-logo-container100 {
+  position: absolute;
+  top: clamp(5px, 2vh, 10px);
+  left: clamp(5px, 2vw, 10px);
+  border-radius: 50%;
+  z-index: 3;
+}
+
+.nav-logo-container100 img {
+  border-radius: 50%;
+  height: clamp(60px, 8vw, 140px);
+  width: clamp(60px, 8vw, 140px);
+  transition: all 0.3s ease;
+}
+
+.nav-links-container-contactus {
+  display: flex;
+  align-items: center;
+  gap: clamp(3px, 1vw, 10px);
+  z-index: 3;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0 clamp(10px, 3vw, 30px);
+}
+
+.nav-linkVal-container-contactus {
+  text-decoration: none;
+  color: rgb(108, 183, 206);
+  padding: clamp(6px, 1.2vw, 15px);
+  font-size: clamp(14px, 2vw, 25px);
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.nav-linkVal-container-contactus:hover {
+  color: yellow;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.contactus-header {
+  text-align: center;
+  color: #003366;
+  margin-bottom: clamp(20px, 4vw, 40px);
+  font-size: clamp(28px, 5vw, 40px);
+  font-weight: 900;
+  margin-top: clamp(10px, 15vh, 15px);
+}
+
+.sub-header-contactus {
+  color: #00509e;
+  margin-bottom: clamp(20px, 3vw, 30px);
+  font-size: clamp(22px, 4vw, 28px);
+  text-align: center;
+  font-weight: 900;
+}
+
+.team-section-contactus {
+  margin-bottom: clamp(40px, 6vw, 60px);
+  text-align: center;
+}
+
+.team-cards-contactus {
+  display: flex;
+  gap: clamp(10px, 2vw, 20px);
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0 clamp(10px, 2vw, 20px);
+}
+
+.team-card-contactus {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: clamp(15px, 2vw, 20px);
+  text-align: center;
+  width: min(250px, 90%);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin: clamp(5px, 1vw, 10px);
+}
+
+.team-photo-contactus {
+  border-radius: 50%;
+  width: clamp(80px, 15vw, 100px);
+  height: clamp(80px, 15vw, 100px);
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.team-name-usn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(5px, 1vw, 10px);
+  flex-wrap: wrap;
+}
+
+.team-name-contactus,
+.team-usn-contactus {
+  font-size: clamp(14px, 2vw, 16px);
+  color: #003366;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.team-role-contactus {
+  color: #00509e;
+  font-size: clamp(12px, 1.8vw, 14px);
+}
+
+.guide-section-contactus {
+  margin-bottom: clamp(40px, 6vw, 60px);
+  text-align: center;
+}
+
+.guide-card-contactus {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  width: min(250px, 90%);
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: clamp(15px, 2vw, 20px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.guide-photo-contactus {
+  border-radius: 50%;
+  width: clamp(90px, 18vw, 120px);
+  height: clamp(90px, 18vw, 120px);
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.guide-name-contactus {
+  font-size: clamp(18px, 2.5vw, 20px);
+  color: #003366;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.guide-role-contactus {
+  color: #00509e;
+  font-size: clamp(14px, 2vw, 16px);
+}
+
+.feedback-section-contactus {
+  margin-bottom: clamp(40px, 6vw, 60px);
+  text-align: center;
+}
+
+.feedback-form-contactus {
+  background-color: #ffffff;
+  padding: clamp(20px, 3vw, 30px);
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: min(90%, 600px);
+  margin: 0 auto;
+}
+
+.form-group-contactus {
+  margin-bottom: clamp(15px, 2vw, 20px);
+  text-align: left;
+}
+
+.submit-button-contactus {
+  background-color: #00509e;
+  color: #ffffff;
+  border: none;
+  padding: clamp(10px, 1.5vw, 12px) clamp(15px, 2vw, 20px);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: clamp(14px, 2vw, 16px);
+  font-weight: bold;
+  width: 100%;
+}
+
+.submit-button-contactus:hover {
+  background-color: #003366;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #003366;
+  font-size: clamp(13px, 1.8vw, 14px);
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: clamp(8px, 1.5vw, 10px);
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: clamp(13px, 1.8vw, 14px);
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: none;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  .team-cards-contactus {
+    padding: 0 10px;
+  }
+
+  .feedback-form-contactus {
+    margin: 0 15px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .team-card-contactus,
+  .guide-card-contactus {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .nav-links-container-contactus {
+    padding: 0 5px;
+  }
+}

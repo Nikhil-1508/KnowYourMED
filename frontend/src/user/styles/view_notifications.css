@@ -1,0 +1,152 @@
+.view-user-notifications-container {
+  font-family: "Reem Kufi", sans-serif;
+  margin: 0;
+  padding: clamp(10px, 3vw, 30px);
+  background-image: url("/img5.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.user-viewnotifications-navbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0; /* Explicitly set left to 0 */
+  right: 0; /* Explicitly set right to 0 */
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 2;
+  box-sizing: border-box;
+  padding: clamp(5px, 2vw, 10px);
+  margin: 0; /* Remove any default margins */
+}
+
+.nav-logo-container6 {
+  position: absolute;
+  top: clamp(5px, 2vh, 10px);
+  left: clamp(5px, 2vw, 10px);
+  border-radius: 50%;
+  z-index: 3;
+}
+
+.nav-logo-container6 img {
+  border-radius: 50%;
+  height: clamp(60px, 8vw, 140px);
+  width: clamp(60px, 8vw, 140px);
+  transition: all 0.3s ease;
+}
+
+.nav-links-container-viewnotifications {
+  display: flex;
+  align-items: center;
+  gap: clamp(3px, 1vw, 10px);
+  z-index: 3;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0 clamp(10px, 3vw, 30px);
+}
+
+.nav-linkVal-container-viewnotifications {
+  text-decoration: none;
+  color: rgb(108, 183, 206);
+  padding: clamp(6px, 1.2vw, 15px);
+  font-size: clamp(14px, 2vw, 25px);
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.nav-linkVal-container-viewnotifications:hover {
+  color: yellow;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.h3-style-viewnotifications {
+  color: black;
+  font-size: clamp(30px, 5vw, 50px);
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: clamp(25px, 5vh, 50px);
+  padding: 0 clamp(10px, 3vw, 30px);
+  margin-top: clamp(25px, 5vh, 50px);
+}
+
+/* Card Styling */
+.custom-card-viewnotifications {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  margin: clamp(10px, 2vw, 20px);
+  width: clamp(280px, calc(100% - 40px), 600px);
+  max-width: 100%;
+}
+
+.custom-card-viewnotifications:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Card Title */
+.custom-card-viewnotifications .card-title-viewnotifications {
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  font-weight: 900;
+  margin-bottom: 10px;
+  background-color: white;
+  color: rgb(108, 183, 206);
+  padding: clamp(8px, 2vw, 10px);
+  text-align: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  text-transform: uppercase;
+}
+
+/* Card Text */
+.custom-card-viewnotifications .card-text-viewnotifications {
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  font-weight: 800;
+  margin: clamp(8px, 2vw, 10px);
+  margin-bottom: clamp(8px, 2vw, 10px);
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  .user-viewnotifications-navbar {
+    justify-content: center;
+    padding: 5px;
+  }
+
+  .nav-links-container-viewnotifications {
+    justify-content: flex-end;
+    padding: 0 5px;
+  }
+
+  .custom-card-viewnotifications {
+    margin: 10px auto;
+    width: calc(100% - 20px);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .nav-links-container-viewnotifications {
+    gap: 5px;
+  }
+
+  .nav-linkVal-container-viewnotifications {
+    padding: 4px 8px;
+    font-size: clamp(12px, 4vw, 16px);
+  }
+
+  .custom-card-viewnotifications:hover {
+    transform: none;
+  }
+}
