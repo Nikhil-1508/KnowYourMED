@@ -1,5 +1,6 @@
 /* General styles */
-body {
+.MedInfo {
+  background-image: url('https://cdn.wallpapersafari.com/59/53/JFdx3p.jpg'); 
   background-size: cover;
   background-position: center;
   font-family: Arial, sans-serif;
@@ -25,22 +26,20 @@ h1 {
   margin-bottom: 20px;
 }
 
-/* Input card styles */
+/* Input card */
 .input-card {
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
   max-width: 900px;
-  width: 80%;
-  margin: 0 auto 20px;
+  width: 100%;
+  margin: 20px auto;
   text-align: center;
 }
 
-/* Input field */
-input[type="text"] {
+.input-card input[type="text"] {
   width: 80%;
-  max-width: 600px;
   padding: 10px;
   font-size: 1rem;
   border: 2px solid #004e89;
@@ -49,13 +48,12 @@ input[type="text"] {
   margin-bottom: 15px;
 }
 
-input[type="text"]:focus {
+.input-card input[type="text"]:focus {
   border-color: #0077b6;
   box-shadow: 0 0 5px #0077b6;
 }
 
-/* Button */
-button {
+.input-card button {
   padding: 10px 20px;
   font-size: 1rem;
   color: #fff;
@@ -66,7 +64,7 @@ button {
   transition: background-color 0.3s ease;
 }
 
-button:hover {
+.input-card button:hover {
   background-color: #005f8b;
 }
 
@@ -115,15 +113,11 @@ p[style*="color: red"] {
     font-size: 1.5rem;
   }
 
-  .input-card {
-    padding: 15px;
-  }
-
-  input[type="text"] {
+  .input-card input[type="text"] {
     width: 90%;
   }
 
-  button {
+  .input-card button {
     width: 100%;
     padding: 12px 0;
     font-size: 1rem;

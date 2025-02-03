@@ -78,7 +78,6 @@ const GenerateQR = () => {
           </>
         )}
       </div>
-      <MedicineInfo />
     </div>
   );
 };

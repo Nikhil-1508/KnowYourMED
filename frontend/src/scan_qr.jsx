@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { QrReader } from 'react-qr-reader';
 import jsQR from 'jsqr';
 import './scanQR.css';
+import Header from './Header.jsx';
 
 const QRCodeScanner = () => {
   const [scanResult, setScanResult] = useState('');

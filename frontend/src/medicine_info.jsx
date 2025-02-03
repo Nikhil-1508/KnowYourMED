@@ -4,7 +4,8 @@ import "./medicineInfo.css";
 
 function MedicineInfo() {
   const [medicineName, setMedicineName] = useState(""); // Controlled input field
-  const [medicineDetails, setMedicineDetails] = useState(null); // Store only the latest searched tablet
+  const [searchQuery, setSearchQuery] = useState(""); // Search query triggered on submit
+  const [medicineResults, setMedicineResults] = useState([]); // Array to store search results
   const [error, setError] = useState(null);
 
   // Helper function to get the position of the nth occurrence of a character
@@ -19,7 +20,7 @@ function MedicineInfo() {
 
   // Function to slice text till the 10th full stop
   const sliceText = (text) => {
-    if (!text) return "No information available.";
+    if (!text) return "No information avaailable.";
     const index = getNthOccurrence(text, ".", 10);
     return index !== -1 ? text.slice(0, index + 1) : text; // Include the 10th full stop
   };
@@ -33,6 +34,7 @@ function MedicineInfo() {
       setError("Please enter a valid medicine name.");
       return;
     }
+    setSearchQuery(medicineName); // Update search query on submit
     fetchMedicineDetails(medicineName);
   };
 
@@ -42,8 +44,11 @@ function MedicineInfo() {
       const response = await axios.get(`http://localhost:3000/medicine/${query}`);
       console.log(response.data?.medicine);
 
-      // Set the latest searched medicine details
-      setMedicineDetails({ name: query, details: response.data });
+      // Append new medicine details to the existing array
+      setMedicineResults((prevResults) => [
+        ...prevResults,
+        { name: query, details: response.data },
+      ]);
       setError(null); // Clear error on success
     } catch (err) {
       // Handle errors (including 404 and 500)
@@ -56,58 +61,63 @@ function MedicineInfo() {
   };
 
   return (
-    <div className>
+    <div className="MedInfo">
       <h1>Medicine Information Search</h1>
-      <input
-        type="text"
-        placeholder="Enter medicine name (e.g., Paracetamol)"
-        value={medicineName}
-        onChange={handleInputChange}
-      />
-      <div>
-        <button onClick={handleSearch}>Search</button>
+
+      {/* Input card */}
+      <div className="input-card">
+        <input
+          type="text"
+          placeholder="Enter medicine name (e.g., Paracetamol)"
+          value={medicineName}
+          onChange={handleInputChange}
+        />
+        <div>
+          <button onClick={handleSearch}>Search</button>
+        </div>
       </div>
 
       {error && <p style={{ color: "red" }}>{error}</p>}
 
-      {/* Display only the latest searched medicine */}
-      {medicineDetails && (
+      {/* Display latest searched medicine details */}
+      {medicineResults.length > 0 && (
         <div className="medicine-card">
           <h2>
             Details for{" "}
-            {medicineDetails.name.charAt(0).toUpperCase() + medicineDetails.name.slice(1)}
+            {medicineResults[medicineResults.length - 1].name.charAt(0).toUpperCase() +
+              medicineResults[medicineResults.length - 1].name.slice(1)}
           </h2>
           <p>
             <strong>Dosage Form:</strong>{" "}
-            {sliceText(medicineDetails.details.dosage)}
+            {sliceText(medicineResults[medicineResults.length - 1].details.dosage)}
           </p>
           <p>
             <strong>Age Group:</strong>{" "}
-            {sliceText(medicineDetails.details.ageGroup)}
+            {sliceText(medicineResults[medicineResults.length - 1].details.ageGroup)}
           </p>
           <p>
             <strong>Side Effects:</strong>{" "}
-            {sliceText(medicineDetails.details.sideEffects)}
+            {sliceText(medicineResults[medicineResults.length - 1].details.sideEffects)}
           </p>
           <p>
             <strong>Purpose:</strong>{" "}
-            {sliceText(medicineDetails.details.medicine?.purpose)}
+            {sliceText(medicineResults[medicineResults.length - 1].details.medicine?.purpose)}
           </p>
           <p>
             <strong>Warnings:</strong>{" "}
-            {sliceText(medicineDetails.details.warnings)}
+            {sliceText(medicineResults[medicineResults.length - 1].details.warnings)}
           </p>
           <p>
             <strong>Overdosage:</strong>{" "}
-            {sliceText(medicineDetails.details.overdosage)}
+            {sliceText(medicineResults[medicineResults.length - 1].details.overdosage)}
           </p>
           <p>
             <strong>Adverse Actions:</strong>{" "}
-            {sliceText(medicineDetails.details.adverseActions)}
+            {sliceText(medicineResults[medicineResults.length - 1].details.adverseActions)}
           </p>
           <p>
             <strong>General Precautions:</strong>{" "}
-            {sliceText(medicineDetails.details.generalPrecautions)}
+            {sliceText(medicineResults[medicineResults.length - 1].details.generalPrecautions)}
           </p>
         </div>
       )}

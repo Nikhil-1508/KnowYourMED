@@ -10,6 +10,7 @@ import UserNotifications from "./user-notifications";
 import MedicineInfo from "./medicine_info";
 import GenerateQR from "./generate_qr";
 import QRCodeScanner from "./scan_qr";
+import ContactUs from "./contact_us";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/user/medicine-info" element={<MedicineInfo />} />
         <Route path="/user/generate-qr" element={<GenerateQR />} />
         <Route path="/user/scan-qr" element={<QRCodeScanner />} />
+        <Route path="/contactus" element={<ContactUs />} />
       </Routes>
     </BrowserRouter>
   );

@@ -1,32 +1,17 @@
-import { useState, useEffect } from "react";
-import logo from "./assets/images/logo3.jpg";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import logo from "./assets/images/logo3.jpg";
 
 function HomePage() {
   const [username, setUsername] = useState("");
-  const [translate, srtTranslate] = useState(false);
 
   useEffect(() => {
     const name = sessionStorage.getItem("userName");
-    name ? setUsername(name) : "User";
+    name ? setUsername(name) : setUsername("User");
   }, []);
 
-  // useEffect(() => {
-  //   const userId = 1; // Replace this with the actual user ID (could come from authentication)
-
-  //   // Fetch username from backend
-  //   fetch(`http://localhost:3000/api/get-username/${userId}`)
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       if (data.username) {
-  //         setUsername(data.username); // Store the username in the state
-  //       }
-  //     })
-  //     .catch((error) => console.error("Error fetching username:", error));
-  // }, []);
-
   return (
-    <div style={{ fontFamily: "Reem Kufi, sans-serif" }}>
+    <div style={{ fontFamily: "Reem Kufi, sans-serif", margin: 0, padding: 0 }}>
       {/* Navbar */}
       <div
         style={{
@@ -64,7 +49,6 @@ function HomePage() {
           }}
         >
           Contact Us
-          {/* translate ? "kannada" : "english" */}
         </Link>
         <Link
           to="/aboutus"
@@ -116,9 +100,12 @@ function HomePage() {
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
+          width: "100vw",
+          height: "100vh",
+          margin: 0,
         }}
       >
-        <div className="container text-center">
+        <div className="container-fluid text-center">
           <h1
             className="text-white mb-5"
             style={{
@@ -152,13 +139,9 @@ function HomePage() {
                     transition: "background-color 0.3s, transform 0.2s",
                   }}
                   onMouseEnter={(e) => {
-                    e.target.style.backgroundColor = "rgba(1, 14, 22, 0.7)";
-                    e.target.style.color = "white";
                     e.target.style.transform = "scale(1.1)";
                   }}
                   onMouseLeave={(e) => {
-                    e.target.style.backgroundColor = "rgba(1, 14, 22, 0.7)";
-                    e.target.style.color = "white";
                     e.target.style.transform = "scale(1)";
                   }}
                 >
@@ -186,9 +169,9 @@ function HomePage() {
             src={logo}
             alt="KYM Logo"
             style={{
-              width: "120px",
-              height: "120px",
-              borderRadius: "50%",
+              width: "80px",
+              height: "80px",
+              borderRadius: "100%",
               margin: "10px",
             }}
           />

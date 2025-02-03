@@ -59,7 +59,7 @@
 .custom-submit-btn:hover {
   background-color: #28a745; /* Slightly different shade of green on hover */
   color: white; /* Text color changes on hover */
-  transform: scale(1.1); /* Slightly increase the button size */
+  transform: scale(0.8); /* Slightly increase the button size */
 }
 
 @media (max-width: 768px) {
