@@ -1,17 +1,20 @@
-/* General Styles */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f8ff; /* Light blue background */
-    margin: 0;
-    padding: 0;
+.contact-us-container {
+  background-image: url("/img5.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  padding: clamp(20px, 4vw, 40px);
 }
 
-/* Header Styles */
-.navbar {
-    background-color: rgba(1, 14, 22, 0.7);
+.contactus-navbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
     position: fixed;
     top: 0;
     left: 0;
+  right: 0;
     width: 100%;
     height: 80px;
     z-index: 1000;
@@ -96,7 +99,7 @@ body {
 
 .guide-role {
     color: #00509e;
-    font-size: 16px;
+  font-size: clamp(12px, 1.8vw, 14px);
 }
 
 /* Team Section */
