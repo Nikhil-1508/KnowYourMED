@@ -158,39 +158,55 @@
   width: clamp(90px, 18vw, 120px);
   height: clamp(90px, 18vw, 120px);
     object-fit: cover;
-    margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
-.team-name {
-    font-size: 18px;
+.guide-name-contactus {
+  font-size: clamp(18px, 2.5vw, 20px);
     color: #003366;
-    margin: 10px 0 5px;
+  margin: 10px 0;
     font-weight: bold;
 }
 
-.team-role {
+.guide-role-contactus {
     color: #00509e;
-    font-size: 14px;
+  font-size: clamp(14px, 2vw, 16px);
 }
 
-/* Feedback Section */
-.feedback-section {
-    margin-bottom: 60px;
+.feedback-section-contactus {
+  margin-bottom: clamp(40px, 6vw, 60px);
     text-align: center;
 }
 
-.feedback-form {
+.feedback-form-contactus {
     background-color: #ffffff;
-    padding: 30px;
+  padding: clamp(20px, 3vw, 30px);
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     max-width: 600px;
+  width: min(90%, 600px);
     margin: 0 auto;
 }
 
-.form-group {
-    margin-bottom: 20px;
+.form-group-contactus {
+  margin-bottom: clamp(15px, 2vw, 20px);
     text-align: left;
+}
+
+.submit-button-contactus {
+  background-color: #00509e;
+  color: #ffffff;
+  border: none;
+  padding: clamp(10px, 1.5vw, 12px) clamp(15px, 2vw, 20px);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: clamp(14px, 2vw, 16px);
+  font-weight: bold;
+  width: 100%;
+}
+
+.submit-button-contactus:hover {
+  background-color: #003366;
 }
 
 label {
@@ -198,14 +214,16 @@ label {
     font-weight: bold;
     margin-bottom: 5px;
     color: #003366;
+  font-size: clamp(13px, 1.8vw, 14px);
 }
 
-input, textarea {
+input,
+textarea {
     width: 100%;
-    padding: 10px;
+  padding: clamp(8px, 1.5vw, 10px);
     border: 1px solid #ddd;
     border-radius: 4px;
-    font-size: 14px;
+  font-size: clamp(13px, 1.8vw, 14px);
     box-sizing: border-box;
 }
 
@@ -213,40 +231,25 @@ textarea {
     resize: none;
 }
 
-.submit-button {
-    background-color: #00509e;
-    color: #ffffff;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    width: 100%;
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  .team-cards-contactus {
+    padding: 0 10px;
+    }
+
+  .feedback-form-contactus {
+    margin: 0 15px;
+    }
 }
 
-.submit-button:hover {
-    background-color: #003366;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .navbar a {
-        padding: 15px 30px;
-        font-size: 18px;
-    }
-
-    .team-cards {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .feedback-form {
-        padding: 20px;
-    }
-
-    .guide-card, .team-card {
+@media screen and (max-width: 480px) {
+  .team-card-contactus,
+  .guide-card-contactus {
         width: 100%;
-        max-width: 300px;
+    margin: 10px 0;
+  }
+
+  .nav-links-container-contactus {
+    padding: 0 5px;
     }
 }
