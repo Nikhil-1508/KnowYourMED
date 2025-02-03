@@ -16,7 +16,7 @@ function UserLoginRecover() {
   const [translations, setTranslations] = useState({});
   const [selectedLanguage, setSelectedLanguage] = useState("en");
   const [otpSent, setOtpSent] = useState(false);
-  const [otpReceivedFromBackend, setOtpReceivedFromBackend] = useState(false);
+  const [otpReceivedFromBackend, setOtpReceivedFromBackend] = useState("");
   const [otpVerified, setOtpVerified] = useState(false);
 
   // Fetch the saved language from sessionStorage
@@ -140,8 +140,9 @@ function UserLoginRecover() {
       );
 
       const result = await response.json();
-      console.log(result.otp);
-
+      // console.log(result.otp);
+      setOtpSent(true);
+      setOtpReceivedFromBackend(result.otp);
       // if (response.ok) {
       //   setOtpSent(true);
       //   alert(translations.errorOtpSent || "OTP sent to your email!");
@@ -165,7 +166,7 @@ function UserLoginRecover() {
       return;
     }
     setError("");
-    if (formData.otp === "expectedOtpValue") {
+    if (Number(formData.otp) === Number(otpReceivedFromBackend)) {
       setOtpVerified(true);
       alert("OTP verified successfully!");
     } else {
@@ -198,6 +199,9 @@ function UserLoginRecover() {
       );
 
       const result = await response.json();
+      console.log(response);
+      console.log(result);
+
       if (response.ok) {
         alert(
           translations.successPasswordReset || "Password reset successful!"

@@ -10,22 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
-<<<<<<< HEAD
-    "@emotion/react": "^11.14.0",
-    "@emotion/styled": "^11.14.0",
-    "@fontawesome/react-fontawesome": "file:fontawesome/fontawesome-svg-core@fontawesome/free-solid-svg-icons",
-    "@fortawesome/fontawesome-free": "^6.7.2",
-=======
->>>>>>> f7a7e49ed2912411d1148eb001561f2b9f69ee5e
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
     "@fortawesome/free-brands-svg-icons": "^6.7.2",
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
-<<<<<<< HEAD
-    "@mui/material": "^6.3.1",
-=======
     "@zxing/library": "^0.21.3",
->>>>>>> f7a7e49ed2912411d1148eb001561f2b9f69ee5e
     "axios": "^1.7.9",
     "bootstrap": "^5.3.3",
     "jsqr": "^1.4.0",
@@ -34,7 +23,7 @@
     "react-dom": "^18.3.1",
     "react-qr-reader": "^3.0.0-beta-1",
     "react-router-dom": "^7.1.1",
-    "react-toastify": "^11.0.2"
+    "react-toastify": "^11.0.3"
   },
   "devDependencies": {
     "@eslint/js": "^9.15.0",
